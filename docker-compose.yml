@@ -5,9 +5,9 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: api
-    entrypoint: sh -c 'yarn install --frozen-lockfile && yarn start:dev'
-    #depends_on:
-      #- mongodb
+    entrypoint: sh -c 'yarn install --frozen-lockfile && yarn start:swc'
+    depends_on:
+      - mongodb
     networks:
       - api-network
     ports:
