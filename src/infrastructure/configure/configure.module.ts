@@ -11,10 +11,11 @@ import { ThrottlerModule } from '@nestjs/throttler';
     ThrottlerModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: (config: ConfigService) => [
+      // eslint-disable-next-line @typescript-eslint/require-await
+      useFactory: async (config: ConfigService) => [
         {
-          ttl: config.get('THROTTLE_TTL'),
-          limit: config.get('THROTTLE_LIMIT'),
+          ttl: config.get<number>('THROTTLE_TTL', 60000),
+          limit: config.get<number>('THROTTLE_LIMIT', 10),
         },
       ],
     }),
