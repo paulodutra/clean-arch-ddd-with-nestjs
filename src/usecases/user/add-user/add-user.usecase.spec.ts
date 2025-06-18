@@ -1,6 +1,6 @@
-import { UserRepositoryInterface } from '../../data/protocols/db/user/user-repository.interface';
+import { UserRepositoryInterface } from '../../../data/protocols/db/user/user-repository.interface';
 import { AddUserUseCase } from './add-user.usecase';
-import { User, UserProps } from '../../domain/user/user';
+import { User, UserProps } from '../../../domain/user/user';
 
 describe('AddUserUseCase', () => {
   let addUserUseCase: AddUserUseCase;

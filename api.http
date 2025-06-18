@@ -1,3 +1,17 @@
 @url=http://localhost:3003
 
 GET {{url}}
+
+### Create user
+POST {{url}}/users HTTP/1.1
+content-type: application/json
+
+{
+    "name": "teste",
+    "surname": "teste",
+    "email": "email@email.com",
+    "password" : "password"
+}
+
+### Load all users
+GET {{url}}/users HTTP/1.1
